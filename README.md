@@ -2,6 +2,7 @@
 
 https://semihgedik2006-glitch.github.io/bauwerk-previews/
 
+- [v8](https://semihgedik2006-glitch.github.io/bauwerk-previews/v8/)
 - [v7](https://semihgedik2006-glitch.github.io/bauwerk-previews/v7/)
 - [v6](https://semihgedik2006-glitch.github.io/bauwerk-previews/v6/)
 - [v5](https://semihgedik2006-glitch.github.io/bauwerk-previews/v5/)
