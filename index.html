@@ -1,79 +1,208 @@
 <!doctype html>
 <html lang="de">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow">
-<title>Bauwerk Previews</title>
-<style>
-  :root { --bg:#f4f1ec; --ink:#1d1c1a; --muted:#6d6862; --line:#ddd6cc; --card:#fff; --accent:#b8643c; }
-  @media (prefers-color-scheme: dark) { :root { --bg:#151412; --ink:#efebe5; --muted:#a29b92; --line:#2e2b27; --card:#1d1b19; --accent:#d9825a; } }
-  * { box-sizing:border-box; }
-  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif; }
-  main { max-width:1100px; margin:0 auto; padding:56px 16px 72px; }
-  .eyebrow { font:600 12px/1 ui-monospace,Menlo,monospace; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); }
-  h1 { font:400 clamp(34px,6vw,56px)/1.05 Georgia,"Times New Roman",serif; margin:14px 0 12px; letter-spacing:-.01em; }
-  .lead { color:var(--muted); max-width:620px; margin:0 0 40px; }
-  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:20px; }
-  a.card { display:flex; flex-direction:column; background:var(--card); border:1px solid var(--line); border-radius:14px; overflow:hidden; color:inherit; text-decoration:none; transition:transform .2s, box-shadow .2s; }
-  a.card:hover { transform:translateY(-3px); box-shadow:0 14px 34px rgba(0,0,0,.12); }
-  .card img { width:100%; aspect-ratio:16/10; object-fit:cover; display:block; background:var(--line); }
-  .body { padding:18px 20px 20px; display:flex; flex-direction:column; gap:6px; flex:1; }
-  .row { display:flex; justify-content:space-between; align-items:baseline; gap:12px; }
-  .tag { font:600 12px/1 ui-monospace,Menlo,monospace; color:var(--accent); }
-  .new { font:600 11px/1 system-ui; background:var(--accent); color:#fff; padding:4px 8px; border-radius:99px; }
-  h2 { font:500 21px/1.25 Georgia,serif; margin:2px 0 0; }
-  p { margin:0; color:var(--muted); font-size:15px; }
-  .go { margin-top:auto; padding-top:10px; font-weight:600; font-size:14px; }
-  footer { margin-top:48px; color:var(--muted); font-size:13px; border-top:1px solid var(--line); padding-top:18px; }
-</style>
-</head>
-<body>
-<main>
-  <div class="eyebrow">Bauwerk by Angelo Lella · Redesign</div>
-  <h1>Alle Entwürfe auf einen Blick</h1>
-  <p class="lead">Jede Version ist eine eigene, voll klickbare Vorschau. Die neueste steht vorne. Alle Bilder sind Platzhalter aus der 3D-Szene, keine echten Projektfotos.</p>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Bauwerk Previews</title>
+    <style>
+      :root {
+        --bg: #f4f1ec;
+        --ink: #1d1c1a;
+        --muted: #6d6862;
+        --line: #ddd6cc;
+        --card: #fff;
+        --accent: #b8643c;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #151412;
+          --ink: #efebe5;
+          --muted: #a29b92;
+          --line: #2e2b27;
+          --card: #1d1b19;
+          --accent: #d9825a;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font:
+          16px/1.55 system-ui,
+          -apple-system,
+          "Segoe UI",
+          sans-serif;
+      }
+      main {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 56px 16px 72px;
+      }
+      .eyebrow {
+        font:
+          600 12px/1 ui-monospace,
+          Menlo,
+          monospace;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+      h1 {
+        font:
+          400 clamp(34px, 6vw, 56px)/1.05 Georgia,
+          "Times New Roman",
+          serif;
+        margin: 14px 0 12px;
+        letter-spacing: -0.01em;
+      }
+      .lead {
+        color: var(--muted);
+        max-width: 620px;
+        margin: 0 0 40px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+      }
+      a.card {
+        display: flex;
+        flex-direction: column;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        overflow: hidden;
+        color: inherit;
+        text-decoration: none;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+      a.card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 14px 34px rgba(0, 0, 0, 0.12);
+      }
+      .card img {
+        width: 100%;
+        aspect-ratio: 16/10;
+        object-fit: cover;
+        display: block;
+        background: var(--line);
+      }
+      .body {
+        padding: 18px 20px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        flex: 1;
+      }
+      .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 12px;
+      }
+      .tag {
+        font:
+          600 12px/1 ui-monospace,
+          Menlo,
+          monospace;
+        color: var(--accent);
+      }
+      .new {
+        font: 600 11px/1 system-ui;
+        background: var(--accent);
+        color: #fff;
+        padding: 4px 8px;
+        border-radius: 99px;
+      }
+      h2 {
+        font:
+          500 21px/1.25 Georgia,
+          serif;
+        margin: 2px 0 0;
+      }
+      p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 15px;
+      }
+      .go {
+        margin-top: auto;
+        padding-top: 10px;
+        font-weight: 600;
+        font-size: 14px;
+      }
+      footer {
+        margin-top: 48px;
+        color: var(--muted);
+        font-size: 13px;
+        border-top: 1px solid var(--line);
+        padding-top: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="eyebrow">Bauwerk by Angelo Lella · Redesign</div>
+      <h1>Alle Entwürfe auf einen Blick</h1>
+      <p class="lead">
+        Jede Version ist eine eigene, voll klickbare Vorschau. Die neueste steht vorne. Alle Bilder sind Platzhalter aus
+        der 3D-Szene, keine echten Projektfotos.
+      </p>
 
-  <div class="grid">
-    <a class="card" href="v4/">
-      <img src="img/v4.webp" alt="Version 4: fertig beleuchtetes Bad mit Sonnenlicht" loading="lazy">
-      <div class="body">
-        <div class="row"><span class="tag">v4</span><span class="new">Neueste</span></div>
-        <h2>Raytracing und echtes Licht</h2>
-        <p>Path-Tracing im Hero, Fenster mit Sonne und Schatten, neue Sektion „Licht ist Material“ mit vier Tageszeiten.</p>
-        <span class="go">Vorschau öffnen →</span>
+      <div class="grid">
+        <a class="card" href="v4/">
+          <img src="img/v4.webp" alt="Version 4: fertig beleuchtetes Bad mit Sonnenlicht" loading="lazy" />
+          <div class="body">
+            <div class="row">
+              <span class="tag">v4</span>
+              <span class="new">Neueste</span>
+            </div>
+            <h2>Raytracing und echtes Licht</h2>
+            <p>
+              Path-Tracing im Hero, Fenster mit Sonne und Schatten, neue Sektion „Licht ist Material“ mit vier
+              Tageszeiten.
+            </p>
+            <span class="go">Vorschau öffnen →</span>
+          </div>
+        </a>
+        <a class="card" href="v3/">
+          <img src="img/v3.webp" alt="Version 3: komplette Website mit 3D-Hero" loading="lazy" />
+          <div class="body">
+            <div class="row"><span class="tag">v3</span></div>
+            <h2>Komplette Website, 17 Seiten</h2>
+            <p>Leistungen, Projekte, Über uns, Kontakt mit Anfrage-Assistent, weiche Seitenübergänge und 3D-Hero.</p>
+            <span class="go">Vorschau öffnen →</span>
+          </div>
+        </a>
+        <a class="card" href="v2/">
+          <img src="img/v2.webp" alt="Version 2: 3D-Bad entsteht beim Scrollen" loading="lazy" />
+          <div class="body">
+            <div class="row"><span class="tag">v2</span></div>
+            <h2>3D-Bad entsteht beim Scrollen</h2>
+            <p>Einseitiger Prototyp: Bauzeichnung, Plan mit Maßen, Rohbau und fertiger Raum als Three.js-Szene.</p>
+            <span class="go">Vorschau öffnen →</span>
+          </div>
+        </a>
+        <a class="card" href="v1/">
+          <img src="img/v1.webp" alt="Version 1: Bauzeichnung als Startbild" loading="lazy" />
+          <div class="body">
+            <div class="row"><span class="tag">v1</span></div>
+            <h2>Erster Entwurf „Blaupause trifft Material“</h2>
+            <p>Die Grundidee: Von der Bauzeichnung zum fertigen Bad, als einzelne Seite.</p>
+            <span class="go">Vorschau öffnen →</span>
+          </div>
+        </a>
       </div>
-    </a>
-    <a class="card" href="v3/">
-      <img src="img/v3.webp" alt="Version 3: komplette Website mit 3D-Hero" loading="lazy">
-      <div class="body">
-        <div class="row"><span class="tag">v3</span></div>
-        <h2>Komplette Website, 17 Seiten</h2>
-        <p>Leistungen, Projekte, Über uns, Kontakt mit Anfrage-Assistent, weiche Seitenübergänge und 3D-Hero.</p>
-        <span class="go">Vorschau öffnen →</span>
-      </div>
-    </a>
-    <a class="card" href="v2/">
-      <img src="img/v2.webp" alt="Version 2: 3D-Bad entsteht beim Scrollen" loading="lazy">
-      <div class="body">
-        <div class="row"><span class="tag">v2</span></div>
-        <h2>3D-Bad entsteht beim Scrollen</h2>
-        <p>Einseitiger Prototyp: Bauzeichnung, Plan mit Maßen, Rohbau und fertiger Raum als Three.js-Szene.</p>
-        <span class="go">Vorschau öffnen →</span>
-      </div>
-    </a>
-    <a class="card" href="v1/">
-      <img src="img/v1.webp" alt="Version 1: Bauzeichnung als Startbild" loading="lazy">
-      <div class="body">
-        <div class="row"><span class="tag">v1</span></div>
-        <h2>Erster Entwurf „Blaupause trifft Material“</h2>
-        <p>Die Grundidee: Von der Bauzeichnung zum fertigen Bad, als einzelne Seite.</p>
-        <span class="go">Vorschau öffnen →</span>
-      </div>
-    </a>
-  </div>
 
-  <footer>Nur Vorschau, nicht für Suchmaschinen freigegeben. Die echte Seite bleibt bauwerkbyangelolella.de.</footer>
-</main>
-</body>
+      <footer>
+        Nur Vorschau, nicht für Suchmaschinen freigegeben. Die echte Seite bleibt bauwerkbyangelolella.de.
+      </footer>
+    </main>
+  </body>
 </html>
